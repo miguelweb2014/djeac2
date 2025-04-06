@@ -86,11 +86,11 @@ class MySeleniumTests(StaticLiveServerTestCase):
         #select = Select(select_element)
         #select.select_by_value('13')
         if select_element.get_attribute('multiple'):
-            myOption1 = self.selenium.find_element(By.XPATH,"//select[@multiple]/option[contains(text(), 'Authentication and Authorization | user | Can add user')]")
+            option = self.selenium.find_element(By.XPATH,"//select[@multiple]/option[contains(text(), 'Authentication and Authorization | user | Can add user')]").click()
         
         self.selenium.find_element(By.ID,"id_user_permissions_add_link").click()
         if select_element.get_attribute('multiple'):
-            myOption1 = self.selenium.find_element(By.XPATH,"//select[@multiple]/option[contains(text(), 'Authentication and Authorization | user | Can view user')]")
+            option = self.selenium.find_element(By.XPATH,"//select[@multiple]/option[contains(text(), 'Authentication and Authorization | user | Can view user')]").click()
 
         self.selenium.find_element(By.ID,"id_user_permissions_add_link").click()
 
